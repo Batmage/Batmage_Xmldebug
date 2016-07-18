@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Layout XML debugging package for Magento 1.x
+ *
+ * @category Mage
+ * @package  Batmage_Xmldebug
+ * @author   Robbie Averill <robbie@averill.co.nz>
+ */
+-->
+<config>
+    <modules>
+        <Batmage_Xmldebug>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Batmage_Xmldebug>
+    </modules>
+</config>

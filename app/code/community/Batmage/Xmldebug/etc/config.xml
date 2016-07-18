@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Layout XML debugging package for Magento 1.x
+ *
+ * @category Mage
+ * @package  Batmage_Xmldebug
+ * @author   Robbie Averill <robbie@averill.co.nz>
+ */
+-->
+<config>
+    <modules>
+        <Batmage_Xmldebug>
+             <version>1.0.0</version>
+        </Batmage_Xmldebug>
+    </modules>
+    <global>
+        <models>
+            <batmage_xmldebug>
+                <class>Batmage_Xmldebug_Model</class>
+            </batmage_xmldebug>
+        </models>
+        <helpers>
+            <batmage_xmldebug>
+                <class>Batmage_Xmldebug_Helper</class>
+            </batmage_xmldebug>
+        </helpers>
+        <events>
+            <controller_action_layout_generate_blocks_before>
+                <observers>
+                    <debug_layout_xml_to_browser>
+                        <class>batmage_xmldebug/observer</class>
+                        <method>debugXml</method>
+                    </debug_layout_xml_to_browser>
+                </observers>
+            </controller_action_layout_generate_blocks_before>
+        </events>
+    </global>
+</config>
