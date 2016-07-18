@@ -23,12 +23,14 @@ class Batmage_Xmldebug_Model_Observer
 
         $xml = '<?xml version="1.0"?>
         <xml_layout_debugging>
+            <!-- Useful information about how the controller is reacting -->
             <route>
                 <name>' . $request->getRouteName() . '</name>
                 <requested_route_name>' . $request->getRequestedRouteName() . '</requested_route_name>
                 <requested_controller_name>' . $request->getRequestedControllerName() . '</requested_controller_name>
                 <requested_action_name>' . $request->getRequestedActionName() . '</requested_action_name>
             </route>
+            <!-- The handles that are active for this route -->
             <handles>';
 
         foreach ($observer->getLayout()->getUpdate()->getHandles() as $handle) {
@@ -37,6 +39,7 @@ class Batmage_Xmldebug_Model_Observer
 
         $xml .= '
             </handles>
+            <!-- The layout XML output -->
             <output>' . $observer->getLayout()->getUpdate()->asString() . '</output>
         </xml_layout_debugging>';
 
