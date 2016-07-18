@@ -9,7 +9,7 @@ Brought to you by Batmage!
 The easiest way is using [modman](https://github.com/colinmollenhour/modman), if you can:
 
 ```bash
-modman clone https://github.com/robbieaverill/Batmage_Xmldebug.git
+modman clone https://github.com/Batmage/Batmage_Xmldebug.git
 ```
 
 Clear your cache before use.
@@ -45,19 +45,23 @@ so that your browser can format it nicely for you, example:
         <!-- The layout XML output -->
         <output>
             <block name="formkey" type="core/template" template="core/formkey.phtml"/>
-                <label>All Pages</label>
-                <block type="page/html" name="root" output="toHtml" template="page/3columns.phtml">
-                    <block type="page/html_head" name="head" as="head">
-                        <action method="addJs">
-                            <script>prototype/prototype.js</script>
-                        </action>
-                        <action method="addJs">
-                            <script>lib/jquery/jquery-1.10.2.min.js</script>
-                        </action>
-        ...
+            <label>All Pages</label>
+            <block type="page/html" name="root" output="toHtml" template="page/3columns.phtml">
+                <block type="page/html_head" name="head" as="head">
+                    <action method="addJs">
+                        <script>prototype/prototype.js</script>
+                    </action>
+                    <action method="addJs">
+                        <script>lib/jquery/jquery-1.10.2.min.js</script>
+                    </action>
+...
 ```
 
 ## Warning!
 
 Please do not deploy this to a production Magento environment, and do not commit this code into a repository that may
 make its way to a production environment!
+
+## License
+
+This module is licensed under the [MIT license](https://github.com/Batmage/Batmage_Xmldebug/blob/master/LICENSE.md).
