@@ -16,7 +16,9 @@ Clear your cache before use.
 
 ## Usage
 
-From any frontend controller route, add the `?debugxml=1` query string parameter.
+### Layout XML
+
+From any frontend controller route, add the `?debugxml=layout` query string parameter.
 
 This will create a XML dump of some useful route arguments and your XML layout and will output it as XML to the browser
 so that your browser can format it nicely for you, example:
@@ -55,6 +57,45 @@ so that your browser can format it nicely for you, example:
                         <script>lib/jquery/jquery-1.10.2.min.js</script>
                     </action>
 ...
+```
+
+### Helper declarations
+
+You can add the `?debugxml=helpers` query string param to a frontend route in Magento
+to dump out the *compiled* configuration for helpers, including any rewrites that are defined, e.g.:
+
+```xml
+<xml_helper_debugging>
+    <core>
+        <rewritten_by>
+            <data>Myvendor_Mypackage_Helper_Data</data>
+            <js>Myvendor_Mypackage_Helper_Corejsoverride</js>
+        </rewritten_by>
+    </core>
+    <admin>
+        <code_pool>core</code_pool>
+        <class>Mage_Admin_Helper</class>
+        <rewritten_by>
+            <data>Myvendor_Mypackage_Helper_Data</data>
+        </rewritten_by>
+    </admin>
+    <!-- ... etc -->
+</xml_helper_debugging>
+```
+
+#### Filtering
+
+You can provide a text filter string via the `debug_filter` query string parameter to perform a simple
+kind of search on the results, for example `?debugxml=helpers&debug_filter=inventory`:
+
+```xml
+<xml_helper_debugging>
+    <cataloginventory>
+        <code_pool>core</code_pool>
+        <class>Mage_CatalogInventory_Helper</class>
+    </cataloginventory>
+    <!-- ... etc -->
+</xml_helper_debugging>
 ```
 
 ## Warning!
